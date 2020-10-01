@@ -1,0 +1,56 @@
+.label{
+    vertical-align: middle;
+    font-family:Montserrat;
+    font-size: 16px;
+    padding-top: 50% ;
+}
+
+ion-toolbar{
+    --background: #008abe;
+    --color: white;
+}
+ion-content{
+    --background: #F5F5F5;
+ 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+}
+
+ion-item{
+    --font-family:Montserrat;
+    --background:#F5F5F5;
+    font-size: 16px;
+}
+.font{
+    font-family: Montserrat;
+  }
+
+  .title {
+      display: block;
+    font-family: Montserrat;
+    font-size: 30px;
+    text-align: center;
+    padding-left: 15px;
+    margin-top: -30px;
+  }
+
+  ion-button{
+      --background: #008abe;
+      height: 7vh;
+    font-size: 3vh;
+    
+    
+
+    margin-top: 7vh;
+    margin-bottom: 7vh;
+
+    --border-radius: 100vh;
+  }
+
+  .arrow{
+      margin-top: 10px;
+      font-size: 19px;
+      padding-left: 6px;
+  }

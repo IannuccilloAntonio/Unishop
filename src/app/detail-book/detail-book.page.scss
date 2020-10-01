@@ -1,0 +1,67 @@
+.title {
+    font-size:20px;
+    font-family: "Comic Sans MS";
+    line-height: 120%;
+    text-align: left;
+}
+.detail {
+    font-size:15px;
+    font-family: "Comic Sans MS";
+    line-height: 120%;
+}
+
+.price {
+    display: block;
+    font-size:20px;
+    font-family: "Comic Sans MS";
+    text-align: center;
+}
+
+.my-custom-class {
+    --background: #e5e5e5;
+  }
+
+  ion-header{
+    ion-toolbar{
+      font-family: Montserrat;
+      --color: white;
+      --background: #008abe;
+      --border-color:#008abe;
+      text-align: center;
+      ion-label{
+        font-size: 25px;
+      }
+      
+    }
+  }
+
+  ion-button{
+    --background: #008abe; 
+
+    height: 7vh;
+
+    --border-radius: 100vh;
+    --padding-end: 6vh;
+    --padding-start: 6vh;
+  }
+
+.grid {
+    border-color: #F5F5F5;
+    border-width: .4em; 
+    border-style: groove; margin-bottom : -1px;
+    font-size:16px;
+}
+
+.center{
+    text-align: center; 
+    display: block;
+}
+
+ion-content{
+    --ion-background-color: #F5F5F5;
+}
+
+.back {
+  text-align: start;
+  margin-right: -100px;
+}

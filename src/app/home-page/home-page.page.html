@@ -1,0 +1,160 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="name">
+          <ion-label>Ciao,
+            {{user.user.name}}</ion-label>
+        </ion-col>
+        <ion-col class="title">
+          <ion-label (click)="getAllBook()"><b>Unishop</b></ion-label>
+        </ion-col>
+        <ion-col class="person">
+          <ion-icon name="person-circle-outline" (click)="profile()"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-searchbar showCancelButton="focus" placeholder="Cerca un libro..." (ionInput)="search($event)"
+      (ionClear)="getAllBook()">
+      <ion-button (click)="filters()">
+        Filtri
+      </ion-button>
+    </ion-searchbar>
+    <ion-grid class="color" *ngIf="showFilter">
+
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Corso di Studi
+            <ion-icon name="chevron-forward-outline" *ngIf="!showDetail && numberOfFilter===0" (click)="detail()">
+            </ion-icon>
+            <ion-icon name="chevron-down-outline" *ngIf="showDetail" (click)="closeDetail()"
+              (ionChange)="closeDetail($event)"></ion-icon>
+          </ion-label>
+          <ion-col *ngIf="showDetail">
+            <ion-radio-group>
+              <ion-item *ngFor="let entry of department">
+                <ion-label>{{entry.val}}</ion-label>
+                <ion-radio slot="end" (click)="detail(entry.val)">
+                </ion-radio>
+
+              </ion-item>
+            </ion-radio-group>
+          </ion-col>
+        </ion-col>
+
+        <ion-col>
+          <ion-label>
+            Condizioni Libro
+            <ion-icon name="chevron-forward-outline" *ngIf="!showCondition && numberOfFilter===0" (click)="Condition()">
+            </ion-icon>
+            <ion-icon name="chevron-down-outline" *ngIf="showCondition" (click)="closeCondition()"></ion-icon>
+          </ion-label>
+          <ion-col *ngIf="showCondition">
+            <ion-radio-group>
+              <ion-item *ngFor="let conditions of condition">
+                <ion-label>{{conditions.val}}</ion-label>
+                <ion-radio slot="end" (click)="Condition(conditions.val)">
+                </ion-radio>
+
+              </ion-item>
+            </ion-radio-group>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            Prezzo
+            <ion-icon name="chevron-forward-outline" *ngIf="!showPrice && numberOfFilter===0" (click)="Price()">
+            </ion-icon>
+            <ion-icon name="chevron-down-outline" *ngIf="showPrice" (click)="closePrice()"></ion-icon>
+          </ion-label>
+          <ion-col *ngIf="showPrice">
+            <ion-radio-group>
+              <ion-item *ngFor="let prices of price">
+                <ion-label>Fino a {{prices.val}} €</ion-label>
+                <ion-radio slot="end" (click)="Price(prices.val)">
+                </ion-radio>
+
+              </ion-item>
+            </ion-radio-group>
+          </ion-col>
+        </ion-col>
+        <ion-col>
+          <ion-label>
+            Lingua
+            <ion-icon name="chevron-forward-outline" *ngIf="!showLanguage 
+            && numberOfFilter===0" (click)="Language()"></ion-icon>
+            <ion-icon name="chevron-down-outline" *ngIf="showLanguage" (click)="closeLanguage()"></ion-icon>
+          </ion-label>
+          <ion-col *ngIf="showLanguage">
+            <ion-radio-group>
+              <ion-item *ngFor="let languages of language">
+                <ion-label>{{languages.val}}</ion-label>
+                <ion-radio slot="end" (click)="Language(languages.val)">
+                </ion-radio>
+
+              </ion-item>
+            </ion-radio-group>
+          </ion-col>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-label>
+            <ion-button (click)="close()" color="danger">
+              Chiudi
+            </ion-button>
+          </ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-button (click)="filtered()">
+            Applica!
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+
+
+
+</ion-header>
+
+<ion-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col sizeLg="4" sizeMd="4" sizeXs="6" *ngFor="let books of book.result; let i = index" class="grid"
+        [ngClass]="(i % 2 == 0) ? 'odd' : 'even'" (click)="detailPage(books._id)">
+
+        <ion-row>{{books.name}}</ion-row>
+        <ion-row><img width="163" height="160" src="{{books.picture}}"
+            onerror="this.src='assets/icon/non_disponibile.png'"></ion-row>
+        <ion-row>
+          <ion-label>di <b>{{books.authorName}}</b></ion-label>
+        </ion-row>
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="book.result.length<=0" class="error">
+    <ion-label>
+      La ricerca non ha fornito risultati
+    </ion-label>
+
+  </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="newBook()" color="danger">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

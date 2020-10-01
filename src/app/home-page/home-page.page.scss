@@ -1,0 +1,83 @@
+.title {
+  font-family: Montserrat;
+  font-size: 30px;
+  text-align: right;
+  padding-left: 8px;
+  padding-top: 5%;
+}
+
+.name {
+  font-family: Montserrat;
+  font-size: 16px;
+  text-align: center;
+  padding-top:8%;
+}
+
+ion-searchbar {
+  ion-button {
+    padding-bottom:-3%;
+    --background:  #1b384a;
+  }
+}
+
+.color{
+  margin-left: 4%;
+  margin-right: 3%;
+    background-color: #008abe;
+    color: white;
+    border-radius: 1vh;
+
+}
+
+ion-col{
+  ion-button{
+    --background:  #1b384a;
+  }
+}
+
+ion-col{
+
+  --background: #1b384a;
+  ion-item{
+    --background: #1b384a;
+    --color:white;
+  }
+}
+
+ion-header{
+  ion-toolbar{
+    font-family: Montserrat;
+    --color: white;
+    --background: #008abe;
+    --border-color:#008abe;;
+  }
+}
+
+.grid{
+  border-color: #F5F5F5;
+  border-width: .4em; 
+  border-style: groove; margin-bottom : -1px;
+  background-color: #F5F5F5;
+  font-size:19px;
+}
+
+ion-content {
+  --ion-background-color: #F5F5F5;
+}
+
+.person{
+  font-size: 35px;
+  text-align: right;
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.error {
+  display: block;
+  text-align: center;
+  padding-top: 7%;
+  font-size: 20px;
+}
+
+

@@ -1,0 +1,40 @@
+ion-content{
+    --ion-background-color:  #1b384a;
+}
+
+ion-title{
+    --color: white;
+    text-align:center;
+    padding-top: 10%;
+}
+
+.color {
+    background-color:  white;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top:5%;
+    text-align: center;
+    border-radius: 4vh;
+}
+
+ion-item{
+    --background:#F5F5F5;
+    border-radius: 2vh;
+}
+
+ion-button {
+    --background: #008abe; 
+
+    height: 7vh;
+    font-size: 3vh;
+    
+    --padding-end: 6vh;
+    --padding-start: 6vh;
+
+    margin-top: 5vh;
+    margin-bottom: 7vh;
+    margin-left: 14vh;
+    --border-radius: 100vh;
+    
+}
+        

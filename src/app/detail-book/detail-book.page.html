@@ -1,0 +1,126 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col class="back" (click)="home()">
+          <ion-icon name="arrow-back-outline"></ion-icon>
+        </ion-col>
+        <ion-col class="title">
+          <ion-label>Unishop</ion-label>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <img widht="200" height="300" src={{book.result.picture}} onerror="this.src='assets/icon/non_disponibile.png'">
+      </ion-col>
+
+      <ion-col style="padding-left: 3%;">
+        <ion-row>
+          <ion-label class="title">{{book.result.name}}
+          </ion-label>
+        </ion-row>
+
+        <ion-row class="detail">
+          <ion-col>
+            Di
+          </ion-col>
+          <ion-col style="color:red">
+            <b>{{book.result.authorName}}</b>
+          </ion-col>
+        </ion-row>
+
+        <ion-row class="detail">
+          <ion-col>
+            Venditore
+          </ion-col>
+          <ion-col style="color:red">
+            <b>{{book.result.seller.name}} {{book.result.seller.surname}}</b>
+          </ion-col>
+
+        </ion-row>
+
+        <ion-row class="detail">
+          <ion-col>
+            Corso di studi:
+          </ion-col>
+          <ion-col style="color:red">
+            <b>{{book.result.seller.department}}</b>
+          </ion-col>
+
+        </ion-row>
+        <br>
+
+      </ion-col>
+
+    </ion-row>
+    <ion-row class="price">
+      Prezzo: <b style="color:red">{{book.result.price}} €</b>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+
+    <ion-row class="center">
+      <ion-button (click)="onDetailMail()">
+        Scopri l'indirizzo email
+      </ion-button>
+    </ion-row>
+    <ion-row class="center">
+      oppure
+    </ion-row>
+    <ion-row class="center">
+      <!-- Controllare se il numero di telefono è stato inserito-->
+      <ion-button (click)="onDetailNumber()">
+        Scopri il numero di telefono
+      </ion-button>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid>
+    <ion-row>
+      <ion-label>Descrizione libro</ion-label>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Numero di pagine:
+      </ion-col>
+      <ion-col>
+        {{book.result.description.numberOfPage}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        ISBN:
+      </ion-col>
+      <ion-col>
+        {{book.result.description.isbn}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Lingua:
+      </ion-col>
+      <ion-col>
+        {{book.result.description.language}}
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        Condizioni de libro:
+      </ion-col>
+      <ion-col>
+        {{book.result.condition}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

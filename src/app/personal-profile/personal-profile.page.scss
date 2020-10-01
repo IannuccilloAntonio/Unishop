@@ -1,0 +1,175 @@
+ion-header {
+    background: #8a56ac;
+  
+    margin-bottom: 0vh;
+    font-family: Montserrat;
+  }
+  
+  ion-header ion-toolbar {
+    --background:  #1b384a;
+    font-family: Montserrat;
+    
+  }
+  
+  ion-header ion-grid {
+    margin-left: 10px;
+    font-family: Montserrat;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  ion-avatar {
+    height: 10vh;
+    width: 10vh;
+  }
+  
+  ion-title {
+    font-size: 3.5vh;
+    font-weight: auto;
+    font-family: Montserrat;
+    color: white;
+  
+    padding-top: 2vh;
+    padding-left: 0;
+  }
+  
+  ion-card-subtitle {
+    font-size: auto;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(109, 101, 101);
+  }
+  
+  ion-icon {
+    height: 3vh;
+    width: 3vh;
+  
+    vertical-align: middle;
+  }
+  
+  ion-content {
+    --padding-bottom: 15vh;
+    font-family: Montserrat;
+  }
+  
+  ion-content ion-grid {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  ion-content ion-label {
+    font-size: 2.5vh;
+    font-family: Montserrat;
+  }
+  
+  .statistics {
+    margin-bottom: 3vh;
+    border-bottom-left-radius: 45px 45px;
+    --color: white;
+    --background: #008abe;
+    padding-top: 1vh;
+    padding-left: 4vh;
+    padding-bottom: 2vh;
+    font-size: 3vh;
+    font-family: Montserrat;
+  }
+  
+  .chip {
+    --color: white;
+    --background: #008abe;
+    padding-right: 10vh;
+    margin-bottom: 1.5vh;
+    font-family: Montserrat;
+    height: 5vh;
+  }
+  
+  .logout {
+    --color: rgb(112, 107, 107);
+    --background: white;
+    margin-bottom: 2vh;
+    height: 2vh;
+    font-family: Montserrat;
+  }
+  
+  .icon-add {
+    font-size: 21px;
+    text-align: right;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  #toast {
+    --color: red;
+  }
+  
+  .img-wrapper {
+    min-height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  
+  .info {
+    display: block;
+    font-size: 21px;
+    font-weight: normal;
+    text-align: center;
+    color: black;
+    margin-top: -10%;
+    font-weight: bold;
+    font-family: Montserrat;
+  }
+
+  .books {
+    background-color: #F5F5F5;;
+    padding-left: 6%;
+    line-height: 24px;
+    font-family: Montserrat;
+    font-size: 20px;
+  }
+
+
+  .modify{
+    display: block;
+    text-align:left;
+    font-size: 16px;
+    background-color: #F5F5F5;
+    font-family: Montserrat;
+    
+  }
+
+  .delete{
+    display: block;
+    text-align:left;
+    margin-left:-30px;
+    background-color: #F5F5F5;
+    font-family: Montserrat;
+  }
+  .book{
+    display: block;
+    text-align:left;
+    font-size: 23px;
+    padding-left:6%;
+    font-family: Montserrat;
+
+  }
+
+  .grid{
+    border-width: .4em; 
+  border-style: groove; margin-bottom : -1px;
+  font-family: Montserrat;
+  }
+
+  .row{
+    border-width: .2em; 
+    border-style: groove;
+    text-align: left;
+    font-family: Montserrat;
+  }

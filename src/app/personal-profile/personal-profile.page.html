@@ -1,0 +1,135 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar class="colorset" mode="md">
+    <ion-grid>
+      <ion-row class="ion-align-items-center">
+        
+        <ion-grid>
+          <ion-row>
+            <!-- Dati anagrafici (nome e cognome) dello studente -->
+            <ion-title>{{ user.user.name}} {{ user.user.surname }}</ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-card-subtitle>{{user.user.email}}</ion-card-subtitle>
+          </ion-row>
+        </ion-grid>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-grid>
+    <ion-toolbar class="statistics">
+      <ion-text>Libri inseriti: {{user.user.book.length}}<br></ion-text>
+      <ion-text> Dipartimento: {{user.user.department}}<br></ion-text>
+      <ion-text>Telefono: {{user.user.phone}}</ion-text>
+    </ion-toolbar>
+    <ion-toolbar *ngIf="user.user.book.length>0">
+      <ion-text class="book">Libri inseriti</ion-text>
+      
+      <ion-grid class="grid" *ngFor="let books of book.result; let i = index ">
+
+        <ion-row>
+          <ion-col class="books" (click)="datailBook(books._id)">
+            {{books.name}}
+          </ion-col>
+          <ion-col class="modify">
+            <ion-label><a (click)="edit(i)">Modifica</a></ion-label>
+          </ion-col>
+          <ion-col class="delete">
+            <ion-label><a (click)="delete(books._id)" >Elimina</a></ion-label>
+          </ion-col>
+        </ion-row>
+        
+          <ion-row *ngIf="show[i]" class="row">
+            <ion-col>
+              Titolo:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.name"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show[i]" class="grid">
+            <ion-col>
+              Autore:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.authorName"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show[i]" class="grid">
+            <ion-col>
+              Condizione:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.condition"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show[i]" class="grid">
+            <ion-col>
+              Prezzo:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.price"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show[i]" class="grid">
+            <ion-col>
+              ISBN:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.description.isbn"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show[i]" class="grid">
+            <ion-col>
+              Numero di pagine:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.description.numberOfPage"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="show[i]" class="grid">
+            <ion-col>
+              Lingua:
+            </ion-col>
+            <ion-col>
+              <ion-input [(ngModel)]="books.description.language"> </ion-input>
+            </ion-col>
+          </ion-row>
+          <ion-button *ngIf="show[i]" (click)="apply(i, books._id)" style="display: block; text-align: right;">Applica</ion-button>
+          <ion-button *ngIf="show[i]" (click)="close(i)" style="display: block; text-align: right;">Chiudi</ion-button>
+        
+      </ion-grid>
+    </ion-toolbar>
+
+    <ion-label *ngIf="user.user.book.length<=0" class="info">Non hai nessun libro inserito.<br>
+      Inizia a vendere
+      i tuoi <br> vecchi
+      libri univeristari </ion-label>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-chip class="chip" on (click)="goHome()">
+        <ion-icon name="home-outline"></ion-icon>
+        <ion-label>Home</ion-label>
+      </ion-chip><br>
+    </ion-row>
+    <ion-row>
+      <ion-chip class="chip" on (click)="newBook()">
+        <ion-icon name="add-circle-outline"></ion-icon>
+        <ion-label>Inserisci un nuovo libro</ion-label>
+      </ion-chip><br>
+    </ion-row>
+    
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-chip class="logout" (click)="logout()">
+      <ion-icon name="log-out-outline"></ion-icon>
+      <ion-label>Logout</ion-label>
+    </ion-chip>
+  </ion-row>
+</ion-footer>

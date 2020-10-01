@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-icon class="arrow" name="arrow-back-outline" (click)="goBack()"></ion-icon>
+    <ion-label class="title"> Inserisci un nuovo libro!</ion-label>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="font">
+  <ion-item>
+    <ion-label position="floating" class="font">Titolo del libro</ion-label>
+    <ion-input [(ngModel)]="book.result.name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" class="font">Autore</ion-label>
+    <ion-input [(ngModel)]="book.result.authorName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" class="font">Prezzo</ion-label>
+    <ion-input type="number" [(ngModel)]="book.result.price"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating" class="font">Numero di pagine</ion-label>
+    <ion-input [(ngModel)]="book.result.description.numberOfPage"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" class="font">ISBN</ion-label>
+    <ion-input [(ngModel)]="book.result.description.isbn"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" class="font">Lingua</ion-label>
+    <ion-input [(ngModel)]="book.result.description.language"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating" class="font">Condizioni</ion-label>
+    <ion-input [(ngModel)]="book.result.condition"></ion-input>
+  </ion-item>
+
+
+  <ion-item style="text-align:center">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label class="label">Inserisci una foto</ion-label>
+        </ion-col>
+        <ion-col>
+          <img widht="112" height="212" src="{{showphoto}}" onerror="this.src='assets/icon/add_image.png'"
+            (click)="addPhoto()">
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-item>
+
+  <ion-button expand="block" (click)="addBook()">
+    Metti in vendita!
+  </ion-button>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-content class="ion-text-center">
+  <ion-toolbar>
+    <ion-grid class="ion-text-center">
+      <ion-row>
+        <ion-title color="light">Benvenuto in</ion-title>
+      </ion-row>
+      
+      <ion-row>
+        <ion-title (click)="registration()">UniShop</ion-title>
+      </ion-row>
+    </ion-grid>  
+  </ion-toolbar>
+  
+  <ion-label color="light">Per continuare inserisci le credenziali universitarie</ion-label>
+
+  <ion-grid>
+    <ion-row>
+      <ion-input placeholder="Username"
+                 [(ngModel)]="username"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <ion-input type="password"
+                 placeholder="Password"
+                 [(ngModel)]="password"></ion-input>
+    </ion-row>
+  </ion-grid>
+
+  <ion-button [disabled]="!username || !password"
+              (click)="homePage()">Login</ion-button>
+<ion-grid>
+              <ion-row>
+                <ion-label>Non sei registrato? <a (click)="registration()">Clicca qui per registrarti</a> 
+                </ion-label>
+              </ion-row>
+            </ion-grid>
+</ion-content>
